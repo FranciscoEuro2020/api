@@ -6,7 +6,8 @@ Instalacion Inicial
 5)symfony new symfony --dir=/var/www/symfony
 
 Descargarlo
-1) git clone 
+1) git clone https://github.com/FranciscoEuro2020/api.git
+1.2) Crear carpeta mysql en el raiz
 2) make up
 3) make bash
 4) Instalamos dependencias: composer install
