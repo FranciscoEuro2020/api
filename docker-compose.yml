@@ -2,6 +2,8 @@ version: '3'
 
 services:
     nginx:
+        image: nginx
+        restart: always
         build:
             context: .
             dockerfile: Dockerfile-nginx
@@ -12,6 +14,8 @@ services:
         networks:
             - symfony
     php:
+        image: apache
+        restart: always
         build:
             context: .
             dockerfile: Dockerfile-php
@@ -25,6 +29,7 @@ services:
         depends_on:
             - mysql
     mysql:
+        restart: always
         image: mysql
         command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
         environment:
