@@ -30,6 +30,7 @@
     },
     "autoload": {
         "psr-4": {
+            "VideoLibrary\\" : "src/VideoLibrary",
             "App\\": "src/"
         }
     },

@@ -23,10 +23,11 @@ bash:
 	docker exec -it symfony_php_1 bash
 
 autoload:
-	$(COMPOSE) run --rm api-videolibrary composer dump-autoload
+	$(COMPOSE) run --rm symfony-videolibrary composer dump-autoload
 db-create:
 	$(COMPOSE) run --rm api-videolibrary bin/console doc:sch:cre
 db-update-dump:
 	$(COMPOSE) run --rm api-videolibrary bin/console doc:sch:upd --dump-sql
 db-update-force:
 	$(COMPOSE) run --rm api-videolibrary bin/console doc:sch:upd --force
+#https://es.stackoverflow.com/questions/43959/docker-compose-auto-start-al-reiniciar
