@@ -1,0 +1,4 @@
+services:
+    api.repository.inMemoryVideoRepository:
+        class: VideoLibrary\Api\Infrastructure\Persistence\InMemory\Repository\InMemoryVideoRepository
+   
