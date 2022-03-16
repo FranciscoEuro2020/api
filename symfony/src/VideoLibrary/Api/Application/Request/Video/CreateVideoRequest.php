@@ -6,10 +6,30 @@ namespace VideoLibrary\Api\Application\Request\Video;
 
 class CreateVideoRequest
 {
-    private string $title;
-    private int $duration;
-    private string $status;
-    private array $subtitles;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    private  $title;
+    /**
+     * Undocumented variable
+     *
+     * @var integer
+     */
+    private  $duration;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    private  $status;
+    /**
+     * Undocumented variable
+     *
+     * @var array
+     */
+    private  $subtitles;
 
     public function __construct(string $title, int $duration, string $status, array $subtitles)
     {

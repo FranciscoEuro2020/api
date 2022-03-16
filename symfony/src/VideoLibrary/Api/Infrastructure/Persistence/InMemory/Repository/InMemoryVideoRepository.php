@@ -19,35 +19,50 @@ class InMemoryVideoRepository implements VideoRepository
             1,
             'published video 1',
             120,
-            new Status('published')
+            new Status('published'),
+            null,
+            null,
+            null
         );
 
         $this->videos[] = new Video(
             2,
             'published video 2',
             120,
-            new Status('published')
+            new Status('published'),
+            null,
+            null,
+            null
         );
 
         $this->videos[] = new Video(
             3,
             'pending video 1',
             120,
-            new Status('pending')
+            new Status('pending'),
+            null,
+            null,
+            null
         );
 
         $this->videos[] = new Video(
             4,
             'pending video 2',
             120,
-            new Status('pending')
+            new Status('pending'),
+            null,
+            null,
+            null
         );
 
         $this->videos[] = new Video(
             5,
             'removed video 1',
             120,
-            new Status('removed')
+            new Status('removed'),
+            null,
+            null,
+            null
         );
     }
 

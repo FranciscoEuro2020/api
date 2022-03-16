@@ -1,6 +1,6 @@
 <?php
 namespace VideoLibrary\Api\Domain\Model\Videos;
-
+use VideoLibrary\Api\Domain\Model\Subtitle\SubtitleCollection;
 class Video
 {
     /**
@@ -23,15 +23,28 @@ class Video
      * @var Status
      */
     private $status;
+    /**
+     * Undocumented variable
+     *
+     * @var \DateTimeImmutable
+     */
+    private  $createdAt;
+    /**
+     *  @var \DateTime
+     */
 
-    public function __construct(int $id, string $title, int $duration, Status $status)
+    private  $updatedAt;
+   /*private  $subtitles;*/
+
+    public function __construct(int $id, string $title, int $duration, Status $status/*,?SubtitleCollection $subtitles*/)
     {
         $this->id = $id;
         $this->title = $title;
         $this->duration = $duration;
         $this->status = $status;
-      /*  $this->createdAt = new \DateTimeImmutable();
-        $this->updatedAt = new \DateTime();*/
+       /* $this->subtitles = $subtitles;*/
+        $this->createdAt = new \DateTimeImmutable();
+        $this->updatedAt = new \DateTime();
     }
 
 
@@ -55,7 +68,7 @@ class Video
         return $this->status;
     }
 
-    /*public function createdAt(): \DateTimeImmutable
+    public function createdAt(): \DateTimeImmutable
     {
         return $this->createdAt;
     }
@@ -63,8 +76,11 @@ class Video
     public function updatedAt(): \DateTime
     {
         return $this->updatedAt;
+    }
+   /* public function subtitles(): ?SubtitleCollection
+    {
+        return $this->subtitles;
     }*/
-
     
 
 }

@@ -8,7 +8,12 @@ use VideoLibrary\Api\Domain\Model\Videos\VideoRepository;
 
 class GetVideosHandler
 {
-  //  private VideoRepository $videoRepository;
+    /**
+     * Undocumented variable
+     *
+     * @var VideoRepository
+     */
+    private  $videoRepository;
 
     public function __construct(VideoRepository $videoRepository)
     {

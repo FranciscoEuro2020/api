@@ -9,9 +9,24 @@ use Doctrine\ORM\EntityRepository;
 
 abstract class DoctrineRepository
 {
-    protected EntityRepository $repository;
-    protected EntityManager $entityManager;
-    protected string $table;
+    /**
+     * Undocumented variable
+     *
+     * @var EntityRepository
+     */
+    protected $repository;
+    /**
+     * Undocumented variable
+     *
+     * @var EntityManager
+     */
+    protected $entityManager;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    protected $table;
 
     public function __construct(EntityManager $entityManager)
     {

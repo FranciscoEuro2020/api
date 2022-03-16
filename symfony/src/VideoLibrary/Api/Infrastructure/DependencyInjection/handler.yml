@@ -2,5 +2,8 @@ services:
   api.query.video.getVideosHandler:
     class: VideoLibrary\Api\Application\Query\Video\GetVideosHandler
     arguments:
-      - '@api.repository.inMemoryVideoRepository'
- 
+      - '@api.repository.doctrineVideoRepository'
+  api.command.video.createVideoHandler:
+    class: VideoLibrary\Api\Application\Command\Video\CreateVideoHandler
+    arguments:
+      - '@api.repository.doctrineVideoRepository'

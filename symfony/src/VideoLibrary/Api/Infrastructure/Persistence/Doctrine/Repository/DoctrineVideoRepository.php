@@ -46,18 +46,18 @@ class DoctrineVideoRepository extends DoctrineRepository implements VideoReposit
     private function toInfrastructure(Video $video): VideoEntity
     {
         $videoEntity = new VideoEntity(
-            $video->id()->value(),
+            $video->id(),
             $video->title(),
             $video->duration(),
             $video->status()->value(),
-            new ArrayCollection(),
+         //   new ArrayCollection(),
             $video->createdAt(),
             $video->updatedAt()
         );
 
-        foreach ($video->subtitles()->getCollection() as $subtitle) {
+       /* foreach ($video->subtitles()->getCollection() as $subtitle) {
             $videoEntity->addSubtitle($this->subtitleToInfrastructure($subtitle));
-        }
+        }*/
 
         return $videoEntity;
     }
@@ -65,7 +65,7 @@ class DoctrineVideoRepository extends DoctrineRepository implements VideoReposit
     private function subtitleToInfrastructure(Subtitle $subtitle): SubtitleEntity
     {
         return new SubtitleEntity(
-            $subtitle->id()->value(),
+            $subtitle->id(),
             $subtitle->language()
         );
     }
@@ -73,7 +73,7 @@ class DoctrineVideoRepository extends DoctrineRepository implements VideoReposit
     private function toDomain(VideoEntity $video): Video
     {
         return new Video(
-            new VideoId($video->id()),
+            $video->id(),
             $video->title(),
             $video->duration(),
             new Status($video->status()),

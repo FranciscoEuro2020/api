@@ -6,27 +6,56 @@ use Doctrine\Common\Collections\Collection;
 
 class Video
 {
-    private string $id;
-    private string $title;
-    private int $duration;
-    private string $status;
-    private Collection $subtitles;
-    private \DateTimeInterface $createdAt;
-    private \DateTimeInterface $updatedAt;
+    /**
+     * Undocumented variable
+     *
+     * @var integer
+     */
+    private  $id;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    private  $title;
+    /**
+     * Undocumented variable
+     *
+     * @var integer
+     */
+    private  $duration;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    private  $status;
+  
+   /**
+    * Undocumented variable
+    *
+    * @var \DateTimeInterface
+    */
+    private  $createdAt;
+    /**
+     * Undocumented variable
+     *
+     * @var \DateTimeInterface
+     */
+    private  $updatedAt;
 
-    public function __construct(string $id, string $title, int $duration, string $status, Collection $subtitles, \DateTimeInterface $createdAt, \DateTimeInterface $updatedAt)
+    public function __construct(int $id, string $title, int $duration, string $status,  \DateTimeInterface $createdAt, \DateTimeInterface $updatedAt)
     {
         $this->id = $id;
         $this->title = $title;
         $this->duration = $duration;
         $this->status = $status;
-        $this->subtitles = $subtitles;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
     }
 
 
-    public function id(): string
+    public function id(): int
     {
         return $this->id;
     }
@@ -54,16 +83,5 @@ class Video
     public function updatedAt(): \DateTimeInterface
     {
         return $this->updatedAt;
-    }
-
-    public function subtitles(): Collection
-    {
-        return $this->subtitles;
-    }
-
-    public function addSubtitle(Subtitle $subtitle)
-    {
-        $subtitle->setVideo($this);
-        $this->subtitles->add($subtitle);
     }
 }

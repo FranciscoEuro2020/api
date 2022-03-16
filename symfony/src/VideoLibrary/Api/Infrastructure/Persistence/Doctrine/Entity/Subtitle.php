@@ -6,9 +6,24 @@ namespace VideoLibrary\Api\Infrastructure\Persistence\Doctrine\Entity;
 
 class Subtitle
 {
-    private string $id;
-    private string $language;
-    private Video $video;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    private  $id;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    private  $language;
+    /**
+     * Undocumented variable
+     *
+     * @var Video
+     */
+    private  $video;
 
     public function __construct(string $id, string $language)
     {
