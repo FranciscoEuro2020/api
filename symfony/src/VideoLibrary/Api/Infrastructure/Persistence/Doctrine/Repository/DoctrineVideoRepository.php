@@ -50,14 +50,14 @@ class DoctrineVideoRepository extends DoctrineRepository implements VideoReposit
             $video->title(),
             $video->duration(),
             $video->status()->value(),
-         //   new ArrayCollection(),
+            new ArrayCollection(),
             $video->createdAt(),
             $video->updatedAt()
         );
 
-       /* foreach ($video->subtitles()->getCollection() as $subtitle) {
+        foreach ($video->subtitles()->getCollection() as $subtitle) {
             $videoEntity->addSubtitle($this->subtitleToInfrastructure($subtitle));
-        }*/
+        }
 
         return $videoEntity;
     }

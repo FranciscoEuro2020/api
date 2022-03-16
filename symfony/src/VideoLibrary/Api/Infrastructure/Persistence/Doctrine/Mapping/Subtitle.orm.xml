@@ -1,6 +1,8 @@
 <doctrine-mapping>
     <entity name="VideoLibrary\Api\Infrastructure\Persistence\Doctrine\Entity\Subtitle" table="subtitle">
-        <id name="id" type="guid" />
+        <id name="id" type="integer">
+        <generator strategy="AUTO" />
+        </id>
         <field name="language" type="string" length="2" />
         <many-to-one field="video" target-entity="Video" />
     </entity>

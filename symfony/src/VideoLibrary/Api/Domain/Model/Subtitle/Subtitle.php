@@ -25,7 +25,7 @@ class Subtitle
      *
      * @var Video
      */
-    private Video $video;
+    private $video;
 
     public function __construct(int $id, string $language)
     {
