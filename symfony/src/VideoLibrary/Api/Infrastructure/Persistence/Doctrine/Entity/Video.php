@@ -30,7 +30,12 @@ class Video
      * @var string
      */
     private  $status;
-  
+  /**
+   * Undocumented variable
+   *
+   * @var Collection
+   */
+    private  $subtitles;
    /**
     * Undocumented variable
     *
@@ -44,12 +49,13 @@ class Video
      */
     private  $updatedAt;
 
-    public function __construct(int $id, string $title, int $duration, string $status,  \DateTimeInterface $createdAt, \DateTimeInterface $updatedAt)
+    public function __construct(int $id, string $title, int $duration, string $status,  Collection $subtitles,  \DateTimeInterface $createdAt, \DateTimeInterface $updatedAt)
     {
         $this->id = $id;
         $this->title = $title;
         $this->duration = $duration;
         $this->status = $status;
+        $this->subtitles = $subtitles;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
     }
@@ -83,5 +89,15 @@ class Video
     public function updatedAt(): \DateTimeInterface
     {
         return $this->updatedAt;
+    }
+    public function subtitles(): Collection
+    {
+        return $this->subtitles;
+    }
+
+    public function addSubtitle(Subtitle $subtitle)
+    {
+        $subtitle->setVideo($this);
+        $this->subtitles->add($subtitle);
     }
 }

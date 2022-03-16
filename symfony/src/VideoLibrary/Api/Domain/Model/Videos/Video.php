@@ -34,15 +34,20 @@ class Video
      */
 
     private  $updatedAt;
-   /*private  $subtitles;*/
+    /**
+     * Undocumented variable
+     *
+     * @var SubtitleCollection
+     */
+    private  $subtitles;
 
-    public function __construct(int $id, string $title, int $duration, Status $status/*,?SubtitleCollection $subtitles*/)
+    public function __construct(int $id, string $title, int $duration, Status $status,SubtitleCollection $subtitles)
     {
         $this->id = $id;
         $this->title = $title;
         $this->duration = $duration;
         $this->status = $status;
-       /* $this->subtitles = $subtitles;*/
+        $this->subtitles = $subtitles;
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTime();
     }
@@ -77,10 +82,10 @@ class Video
     {
         return $this->updatedAt;
     }
-   /* public function subtitles(): ?SubtitleCollection
+    public function subtitles(): SubtitleCollection
     {
         return $this->subtitles;
-    }*/
+    }
     
 
 }
