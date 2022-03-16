@@ -7,12 +7,22 @@ use VideoLibrary\Api\Domain\Model\Subtitle\Subtitle;
 
 class SubtitleResponse
 {
-    private string $id;
-    private string $language;
+    /**
+     * Undocumented variable
+     *
+     * @var int
+     */
+    private  $id;
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    private  $language;
 
     public function __construct(Subtitle $subtitle)
     {
-        $this->id = $subtitle->id()->value();
+        $this->id = $subtitle->id();
         $this->language = $subtitle->language();
     }
 

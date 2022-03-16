@@ -9,7 +9,12 @@ use VideoLibrary\Api\Domain\Model\Videos\InvalidStatusValueException;
 
 class GetVideosController
 {
-   // private GetVideosHandler $getVideosHandler;
+    /**
+     * Undocumented variable
+     *
+     * @var GetVideosHandler
+     */
+    private  $getVideosHandler;
 
     public function __construct(GetVideosHandler $getVideosHandler)
     {

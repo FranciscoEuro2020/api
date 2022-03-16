@@ -8,7 +8,12 @@ use VideoLibrary\Api\Domain\Model\Videos\VideoCollection;
 
 class VideoCollectionResponse
 {
-    //private array $videos;
+    /**
+     * Undocumented variable
+     *
+     * @var array
+     */
+    private  $videos;
 
     public function __construct(VideoCollection $videoCollection)
     {

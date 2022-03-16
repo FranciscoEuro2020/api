@@ -8,7 +8,12 @@ use VideoLibrary\Api\Domain\Model\Subtitle\SubtitleCollection;
 
 class SubtitleCollectionResponse
 {
-    private array $subtitles;
+    /**
+     * Undocumented variable
+     *
+     * @var array
+     */
+    private  $subtitles;
 
     public function __construct(SubtitleCollection $subtitles)
     {
